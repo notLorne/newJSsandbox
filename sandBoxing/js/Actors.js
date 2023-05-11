@@ -19,8 +19,6 @@ class Actors {
     static #bodyStyle;
     static #bodyColor;
 
-
-
     //Constructor
     constructor() {}
 
@@ -30,8 +28,6 @@ class Actors {
     move() {}
 
     delete() {}
-
-
 
     //Getters and setters
     getActorId() {
