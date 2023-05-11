@@ -1,11 +1,25 @@
 class Actors {
     //Attributes
+        //System
     static #actorId;
     static #state;
     static #posX;
     static #posY;
     static #destX;
     static #destY;
+    static #speed;
+
+        //Graphic
+    static #head;
+    static #eyes;
+    static #nose;
+    static #mouth;
+    static #hairStyle;
+    static #hairColor;
+    static #bodyStyle;
+    static #bodyColor;
+
+
 
     //Constructor
     constructor() {}
@@ -16,6 +30,8 @@ class Actors {
     move() {}
 
     delete() {}
+
+
 
     //Getters and setters
     getActorId() {
