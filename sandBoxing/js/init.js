@@ -80,15 +80,20 @@ window.onload = (e) => { //NOW the init will happen once everything is load. Eve
     // console.log(npcBank2);
     // console.log(npcBank3);
 
+    const test = new TextArea("test", 123, 123);
+    
+    console.log(test.addCursorX());
+    console.log(test.getArray());
+
     const gamePainter = new Painter(); //Will be sent to place where new game will be created.
     gamePainter.drawBackground(gameWidth, gameHeight, 255, 0, 0);
     console.log("drawn")
-    gamePainter.drawFloor();
-    gamePainter.drawCenter();
-    gamePainter.drawFront();
+    // gamePainter.drawFloor();
+    // gamePainter.drawCenter();
+    // gamePainter.drawFront();
     gamePainter.drawUI();
 
-    const test = new TextArea("test", 123, 123);
+
 
     console.log(test.getArray());
 
