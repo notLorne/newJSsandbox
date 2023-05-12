@@ -16,7 +16,7 @@ window.onload = (e) => { //NOW the init will happen once everything is load. Eve
     //CREATE A FUNCTION TO GET THE SCREEN RESOLUTION TO ADAPT THE GAME WINDOW SIZE. TEMPORARY VALUE HERE.
     gameWidth = 1200;
     gameHeight = 700;
-    console.log(gameHeight); //OK caught by console.
+    console.log(7676); //OK caught by console.
 
 //Canvas creation.
     var documentBody = document.getElementsByTagName("body")[0]; //Declare and init here for now...
@@ -32,16 +32,17 @@ window.onload = (e) => { //NOW the init will happen once everything is load. Eve
 
 
     //
-    var npcBank1 = WorldNames.generateWordList(2, 4, 128);
-    var npcBank2 = WorldNames.generateWordList(3, 4, 128);
-    var npcBank3 = WorldNames.generateWordList(2, 3, 128);
+    // var npcBank1 = WorldNames.generateWordList(2, 4, 128);
+    // var npcBank2 = WorldNames.generateWordList(3, 4, 128);
+    // var npcBank3 = WorldNames.generateWordList(2, 3, 128);
 
-    console.log(npcBank1);
-    console.log(npcBank2);
-    console.log(npcBank3);
+    // console.log(npcBank1);
+    // console.log(npcBank2);
+    // console.log(npcBank3);
 
     const gamePainter = new Painter();
-    gamePainter.drawBackground(444, 333, 255, 0, 0);
+    gamePainter.drawBackground(1200, 700, 255, 0, 0);
+    console.log("drawn")
 
 
 };
