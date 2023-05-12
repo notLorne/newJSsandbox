@@ -5,6 +5,8 @@ class Painter {
     static frontStack = new Array();
     static uiStack = new Array();
 
+    
+
     drawBackground(bgWidth, bgHeight, newR, newG, newB) {
 
         const bgContext = document.getElementById("background").getContext("2d");
