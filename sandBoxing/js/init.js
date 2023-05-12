@@ -88,4 +88,10 @@ window.onload = (e) => { //NOW the init will happen once everything is load. Eve
     gamePainter.drawFront();
     gamePainter.drawUI();
 
+    const test = new TextArea("test", 123, 123);
+
+    console.log(test.getArray());
+
+    console.log(test.getX());
+
 };
