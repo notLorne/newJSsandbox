@@ -7,6 +7,10 @@ class TextArea{
     static isLive;
     static messageLength;
     static messageLinesTotal;
+    static message;
+    static letterArray;
+    static posX;
+    static posY;
     
     //Constructor
     constructor(outputMessage, X, Y, counter) {
@@ -18,30 +22,25 @@ class TextArea{
             this.counter = counter;
         }
 
-        const message = outputMessage;
-        const posX = X;
-        const posY = Y;
+        this.posX = X;
+        this.posY = Y;
+
         const lineMaxLength = 32; //For now this is an arbitrary value.
         const windowsMaxLines = 4; //For now this is an arbitrary value.
 
-        var letterArray = new Array();
+        this.letterArray = new Array();
 
+        this.message = outputMessage;
         this.xCursor = 0;
         this.yCursor = 0;
-        this.messageLinesTotal = Math.ceil(this.messageLength / windowsMaxLines);
         this.isLive = true;
 
-        //Getters and setters.
-        this.getMessage = () => message;
-        this.getX = () => posX;
-        this.getY = () => posY;
-        this.getArray = () => letterArray;
-
         //Create letters array.
-        for (let k = 0; k < message.length; ++k ) {
+        for (let k = 0; k < outputMessage.length; ++k ) {
 
-            let letter = new Image(); letter.src = "asset/alphabet/alphaAscii/a" + message.charCodeAt(k) + ".png";
-            letter.onload = () => {letterArray[k] = letter;}
+            let letter = new Image(); letter.src = "asset/alphabet/alphaAscii/a" + outputMessage.charCodeAt(k) + ".png";
+            this.letterArray[k] = letter;
+            
         }
     }
 

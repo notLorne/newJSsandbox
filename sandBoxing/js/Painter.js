@@ -49,14 +49,40 @@ class Painter {
         uiContext.imageSmoothingEnabled = false;
 
         //draw image test. WORKING
-        let letter = new Image(); letter.src = "asset/alphabet/alphaAscii/a112.png";
-        letter.onload = () => {uiContext.drawImage(letter,12,12,100,180);};
+
+        
     }
     drawTextArea() {
+
         const uiContext = document.getElementById("uiLayer").getContext("2d");
         uiContext.imageSmoothingEnabled = false;
 
+        for ( let imgStack of this.textAreaStack) {
 
+            const sizeX = 6;
+            const sizeY = 9;
+            let drawStack = imgStack.letterArray;
+            let stringLength = imgStack.length;
+            let posX = imgStack.posX;
+            let posY = imgStack.posY;
+            let cursorX = 0;
+            console.log(drawStack);
+
+            for ( let k = 0; k < drawStack.length; ++k ) {
+                console.log("new char");
+                drawStack[k].onload = function() {
+                    uiContext.drawImage(drawStack[k], posX + (cursorX * sizeX), posY);
+                    cursorX++;
+                }
+            }
+
+            // for (let nextImg of drawStack) {
+            //     nextImg.onload = function() {
+            //         uiContext.drawImage(nextImg, posX + cursorX, posY);
+            //         cursorX += 1 * sizeX;
+            //     }
+            // }
+        }
     }
     
     addToStack(stackRef, object) {
@@ -66,7 +92,7 @@ class Painter {
             case 0: this.floorStack.push(object); break;
             case 1: this.centerStack.push(object); break;
             case 2: this.frontStack.push(object); break;
-            case 3: this.uiStack.push(object); console.log(this.uiStack); break;
+            case 3: this.uiStack.push(object); break;
             case 4: this.textAreaStack.push(object); break;
         }
     }

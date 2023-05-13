@@ -79,7 +79,8 @@ window.onload = (e) => { //NOW the init will happen once everything is load. Eve
     // console.log(npcBank2);
     // console.log(npcBank3);
 
-    const test = new TextArea("test", 123, 123, 0.2);
+    const test = new TextArea("savonssshhnnhnh", 123, 123, 0.2);
+    const test2 = new TextArea("briquetdasdsa", 345, 345);
 
     const gamePainter = new Painter(); //Will be sent to place where new game will be created.
     gamePainter.drawBackground(gameWidth, gameHeight, 255, 0, 0);
@@ -87,12 +88,10 @@ window.onload = (e) => { //NOW the init will happen once everything is load. Eve
     // gamePainter.drawFloor();
     // gamePainter.drawCenter();
     // gamePainter.drawFront();
-    gamePainter.addToStack(3, test);
 
+    gamePainter.addToStack(4, test);
+    gamePainter.addToStack(4, test2);
 
-
-    console.log(test.getArray());
-
-    console.log(test.getX());
+    gamePainter.drawTextArea();
 
 };
