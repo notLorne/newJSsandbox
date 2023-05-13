@@ -70,7 +70,6 @@ window.onload = (e) => { //NOW the init will happen once everything is load. Eve
     uiLayer.style.zIndex = 8;
     documentBody.appendChild(uiLayer);
 
-
     //
     // var npcBank1 = WorldNames.generateWordList(2, 4, 128);
     // var npcBank2 = WorldNames.generateWordList(3, 4, 128);
@@ -80,10 +79,7 @@ window.onload = (e) => { //NOW the init will happen once everything is load. Eve
     // console.log(npcBank2);
     // console.log(npcBank3);
 
-    const test = new TextArea("test", 123, 123);
-    
-    console.log(test.addCursorX());
-    console.log(test.getArray());
+    const test = new TextArea("test", 123, 123, 0.2);
 
     const gamePainter = new Painter(); //Will be sent to place where new game will be created.
     gamePainter.drawBackground(gameWidth, gameHeight, 255, 0, 0);
@@ -91,7 +87,7 @@ window.onload = (e) => { //NOW the init will happen once everything is load. Eve
     // gamePainter.drawFloor();
     // gamePainter.drawCenter();
     // gamePainter.drawFront();
-    gamePainter.drawUI();
+    gamePainter.addToStack(3, test);
 
 
 

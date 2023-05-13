@@ -2,11 +2,22 @@ class TextArea{
 
     static xCursor;
     static yCursor;
+    static counter;
+    static lastFrame;
+    static isLive;
+    static messageLength;
+    static messageLinesTotal;
     
     //Constructor
-    constructor(outputMessage, X, Y) {
+    constructor(outputMessage, X, Y, counter) {
 
         //Attributes
+        if (counter == undefined) {
+            this.counter = 0;
+        } else {
+            this.counter = counter;
+        }
+
         const message = outputMessage;
         const posX = X;
         const posY = Y;
@@ -17,6 +28,8 @@ class TextArea{
 
         this.xCursor = 0;
         this.yCursor = 0;
+        this.messageLinesTotal = Math.ceil(this.messageLength / windowsMaxLines);
+        this.isLive = true;
 
         //Getters and setters.
         this.getMessage = () => message;
@@ -30,12 +43,8 @@ class TextArea{
             let letter = new Image(); letter.src = "asset/alphabet/alphaAscii/a" + message.charCodeAt(k) + ".png";
             letter.onload = () => {letterArray[k] = letter;}
         }
-
     }
-    displayMessage() {
-        //Create background
 
-    }
     addCursorX() {
         this.xCursor += 1;
         return this.xCursor;
