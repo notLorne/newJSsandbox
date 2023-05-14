@@ -49,8 +49,6 @@ class Painter {
         uiContext.imageSmoothingEnabled = false;
 
         //draw image test. WORKING
-
-        
     }
     drawTextArea() {
 
@@ -59,29 +57,31 @@ class Painter {
 
         for ( let imgStack of this.textAreaStack) {
 
+            if (!imgStack.isLive) {
+                imgStack = null;
+            }
+
             const sizeX = 6;
             const sizeY = 9;
+            let textSize = 2;
             let drawStack = imgStack.letterArray;
             let stringLength = imgStack.length;
             let posX = imgStack.posX;
             let posY = imgStack.posY;
             let cursorX = 0;
-            console.log(drawStack);
+            //console.log(drawStack);
+
+            uiContext.fillStyle = "rgb(0,0,255)";
+            uiContext.fillRect(posX - 8,posY - 8, drawStack.length * sizeX  * textSize + 16, 32);
 
             for ( let k = 0; k < drawStack.length; ++k ) {
-                console.log("new char");
+
+                //console.log(drawStack[k]);
                 drawStack[k].onload = function() {
-                    uiContext.drawImage(drawStack[k], posX + (cursorX * sizeX), posY);
+                    uiContext.drawImage(drawStack[k], posX + (sizeX * textSize * k), posY,5 * textSize, 7  * textSize);
                     cursorX++;
                 }
             }
-
-            // for (let nextImg of drawStack) {
-            //     nextImg.onload = function() {
-            //         uiContext.drawImage(nextImg, posX + cursorX, posY);
-            //         cursorX += 1 * sizeX;
-            //     }
-            // }
         }
     }
     
